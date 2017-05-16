@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登录</title>
+</head>
+<style type="text/css">
+#bg {
+	height: 729px;
+	width: 1345px;
+	background-image: url(../photo/login2.jpg);
+"  float:left;
+}
+#login {
+	height: 270px;
+	width: 350px;
+	background-color: #DCDCDC;
+	margin-top: 50px;
+	margin-left: 920px;
+	float: left;
+}
+</style>
+
+<body>
+<div  id="bg"  >
+  <div id="login">
+   
+    <form  name="log" action="">
+    <font color="#000"><h2 align="center">用户登录</h2></font>
+      <div  float:left; style=" margin-left:25px;">
+        <input type="text"  placeholder="请输入用户名" name="username" id="uName" style="border-radius:5px; width: 300px; height: 40px; font-family:'微软雅黑'; font-size:20px; font-weight:bold;">
+      </div>
+      <div  float:left; style="margin-top:20px; margin-left:25px;" >
+        <input type="password" name="userpwd" id="uPass"
+               style="border-radius:5px; width: 300px; height: 40px; font-family:'微软雅黑'; font-size:20px; font-weight:bold;">
+      </div>
+      <div float:left; style="margin-top:20px; margin-left:25px;">
+        <input type="button" value="登录"  
+                style="border-radius:5px; width: 300px; height: 40px; background-color: #96F; color: #fff; font-family:'微软雅黑'; font-size:18px; font-weight:bold;" onclick="ulogin()">
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--     </form> --> 
+
+<script language="javascript" type="text/javascript">  
+        function ulogin() {  
+          
+            var userName = document.getElementById("uName").value;  
+            var userPass = document.getElementById("uPass").value;  
+              
+            if (userPass == "root" && userName == "root") { 
+                window.document.log.action="shouye.html";  
+                   window.document.log.submit();  
+            }   
+            else if (userName == "" || userName == null) {  
+                alert("用户名不能为空");  
+                return false;  
+            }   
+            else if (userPass == "" || userPass == null) {  
+                alert("密码不能为空");  
+                return false;  
+            }   
+            else if (userPass != "root" || userName != "root") {  
+                alert("用户名或密码错误");  
+                return false;  
+            }   
+            else{  
+                return true;  
+            }  
+                  
+        }  
+    </script>
+</body>
+</html>
